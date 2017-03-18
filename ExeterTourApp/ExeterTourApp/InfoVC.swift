@@ -10,9 +10,13 @@ import UIKit
 
 class InfoVC: UIViewController {
 
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var text: UITextView!
+    var currentlocation:loc? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        text.text = currentlocation?.explain
         // Do any additional setup after loading the view.
     }
 

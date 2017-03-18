@@ -191,6 +191,10 @@ In laoreet sem odio. Maecenas viverra, orci sit amet convallis faucibus, ipsum t
                             </attributes>
                         </fragment>
                     </attributedString>
+                    <connections>
+                        <outlet property="image" destination="7Q3-wE-lHT" id="HCY-1S-r0g"/>
+                        <outlet property="text" destination="4OX-a1-tOR" id="ud1-Tl-bsI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBR-kH-5Kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

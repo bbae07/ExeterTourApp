@@ -13,15 +13,15 @@ import UIKit
 //
 struct Section {
     var name: String!
-    var items: [String]!
+    var items: [loc]!
     var collapsed: Bool!
     
-    init(name: String, items: [String], collapsed: Bool = false) {
+    init(name: String, items: [loc], collapsed: Bool = false) {
         self.name = name
         self.items = items
         self.collapsed = collapsed
     }
-    mutating func addItem(item:String){
+    mutating func addItem(item:loc){
         items.append(item)
     }
 }
@@ -59,7 +59,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
         for section in sections{
             var current_section:Section = Section(name: section.name,items: [])
             for item in section.items{
-                if item.localizedCaseInsensitiveContains(searchText){
+                if item.name.localizedCaseInsensitiveContains(searchText){
                     current_section.addItem(item: item)
                 }
             }
@@ -86,12 +86,12 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
         // Initialize the sections array
         // Here we have three sections: Mac, iPad, iPhone
         sections = [
-            Section(name: "Academic Buildings", items: ["Academy Building", "Phelps Science Center"]),
-            Section(name: "Student Life", items: ["dummy","dummy2"]),
-            Section(name: "Athletics", items: ["dummy"]),
-            Section(name: "Admissions and Administration", items: ["dummy"]),
-            Section(name: "Dormitories", items: ["dummy"]),
-            Section(name: "Parking", items: ["dummy"])
+            Section(name: "Academic Buildings", items: [loc(name: "Academy Building",latitude: 42.9811003,longitude: -70.9539292,photo: ["hi","hi"],explain: "explanation dummy"), loc(name: "Phelphs Science Center",latitude: 42.9801363,longitude: -70.9545467,photo: ["hi","hi"],explain: "explanation dummy")]),
+            Section(name: "Student Life", items: []),
+            Section(name: "Athletics", items: []),
+            Section(name: "Admissions and Administration", items: []),
+            Section(name: "Dormitories", items: []),
+            Section(name: "Parking", items: [])
         ]
     }
     
@@ -113,7 +113,7 @@ extension CollapsibleTableViewController {
     // Cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let item:String = (searchController.isActive) ? searched_sections[indexPath.section].items[indexPath.row] : self.sections[indexPath.section].items[indexPath.row]
+        let item:String = (searchController.isActive) ? searched_sections[indexPath.section].items[indexPath.row].name : self.sections[indexPath.section].items[indexPath.row].name
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell? ?? UITableViewCell(style: .default, reuseIdentifier: "cell")//tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         cell.textLabel?.text = item//sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
@@ -143,8 +143,10 @@ extension CollapsibleTableViewController {
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         //hi
         self.searchController.dismiss(animated: true, completion: nil)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "info")
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "info") as! InfoVC
+        vc.currentlocation = self.sections[indexPath.section].items[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
