@@ -21,19 +21,60 @@ struct Section {
         self.items = items
         self.collapsed = collapsed
     }
+    mutating func addItem(item:String){
+        items.append(item)
+    }
 }
 
 //
 // MARK: - View Controller
 //
-class CollapsibleTableViewController: UITableViewController {
+class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating  {
     
     var sections = [Section]()
+    var searched_sections = [Section]()
     
+    var searchController = UISearchController(searchResultsController: nil)
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchController.searchBar.text = ""
+        searchController.searchBar.showsCancelButton = false
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if !searchController.searchBar.showsCancelButton {
+            return ;
+        }
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            self.tableView.reloadData()
+        }
+    }
+    
+    func filterContent(for searchText: String){
+        searched_sections = []
+        for section in sections{
+            var current_section:Section = Section(name: section.name,items: [])
+            for item in section.items{
+                if item.localizedCaseInsensitiveContains(searchText){
+                    current_section.addItem(item: item)
+                }
+            }
+            searched_sections.append(current_section)
+        }
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44))
-        self.tableView.tableHeaderView = searchBar
+        self.tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.title = "PEA Buildings"
@@ -62,14 +103,16 @@ extension CollapsibleTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].items.count
+        return (self.searchController.isActive) ? self.searched_sections[section].items.count : self.sections[section].items.count//sections[section].items.count
     }
     
     // Cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell? ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
         
-        cell.textLabel?.text = sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
+        let item:String = (searchController.isActive) ? searched_sections[indexPath.section].items[indexPath.row] : self.sections[indexPath.section].items[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell        
+        cell.textLabel?.text = item//sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
         cell.accessoryType = UITableViewCellAccessoryType.detailButton
         
         return cell
