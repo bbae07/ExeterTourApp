@@ -150,13 +150,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTE-iN-oFk">
-                                <rect key="frame" x="313" y="629" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTE-iN-oFk">
+                                <rect key="frame" x="295" y="633" width="74" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GO"/>
+                                <state key="normal" image="goicon"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-a1-tOR">
-                                <rect key="frame" x="21" y="258" width="332" height="337"/>
+                                <rect key="frame" x="21" y="294" width="332" height="301"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod varius ligula, et hendrerit lectus aliquet non. Vestibulum maximus posuere est, at posuere odio ultrices vitae. Integer sodales nulla turpis, vel pretium nibh viverra id. Morbi ut pretium lectus. Donec sagittis nulla aliquam, gravida odio sed, consectetur justo. Nulla nec scelerisque felis. Curabitur viverra turpis sed ultrices porttitor. Donec auctor in sem a sagittis. Morbi ex ligula, imperdiet sit amet suscipit non, venenatis id nibh. Proin vitae elit tempus, tempor elit sit amet, facilisis dolor. Aliquam nec tempor magna, congue lobortis risus. Pellentesque id lacus sed eros tincidunt aliquam et at lorem. Vestibulum luctus placerat erat eget porta. Cras sed posuere tellus. Cras id ante eget diam tempor commodo ut a mi.
@@ -165,23 +165,24 @@ In laoreet sem odio. Maecenas viverra, orci sit amet convallis faucibus, ipsum t
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Q3-wE-lHT">
-                                <rect key="frame" x="21" y="28" width="332" height="222"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dummy" translatesAutoresizingMaskIntoConstraints="NO" id="7Q3-wE-lHT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8M-yq-fdJ">
-                                <rect key="frame" x="295" y="124" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uk-ke-LzW">
+                                <rect key="frame" x="6" y="160" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="left"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uk-ke-LzW">
-                                <rect key="frame" x="31" y="124" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8M-yq-fdJ">
+                                <rect key="frame" x="339" y="160" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="right"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <attributedString key="userComments">
                         <fragment content="information page">
                             <attributes>
@@ -215,9 +216,11 @@ In laoreet sem odio. Maecenas viverra, orci sit amet convallis faucibus, ipsum t
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.64313725489999995" green="0.1176470588" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.64313725489999995" green="0.1176470588" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <attributedString key="userComments">
                             <fragment content="Table with drop-down menu">
                                 <attributes>
@@ -275,9 +278,10 @@ In laoreet sem odio. Maecenas viverra, orci sit amet convallis faucibus, ipsum t
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaV-ws-ZT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rXg-5u-ame" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w8x-Tb-U5R">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w8x-Tb-U5R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.64313725489999995" green="0.1176470588" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -288,4 +292,10 @@ In laoreet sem odio. Maecenas viverra, orci sit amet convallis faucibus, ipsum t
             <point key="canvasLocation" x="1720.8" y="139.880059970015"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dummy" width="1488" height="933"/>
+        <image name="goicon" width="1417" height="512"/>
+        <image name="left" width="512" height="512"/>
+        <image name="right" width="512" height="512"/>
+    </resources>
 </document>

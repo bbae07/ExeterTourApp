@@ -70,6 +70,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
@@ -78,12 +79,13 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.title = "PEA Buildings"
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:0.64, green:0.12, blue:0.20, alpha:1.0)]
         
         // Initialize the sections array
         // Here we have three sections: Mac, iPad, iPhone
         sections = [
             Section(name: "Academic Buildings", items: ["Academy Building", "Phelps Science Center"]),
-            Section(name: "Student Life", items: ["dummy"]),
+            Section(name: "Student Life", items: ["dummy","dummy2"]),
             Section(name: "Athletics", items: ["dummy"]),
             Section(name: "Admissions and Administration", items: ["dummy"]),
             Section(name: "Dormitories", items: ["dummy"]),
@@ -111,7 +113,7 @@ extension CollapsibleTableViewController {
         
         let item:String = (searchController.isActive) ? searched_sections[indexPath.section].items[indexPath.row] : self.sections[indexPath.section].items[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell? ?? UITableViewCell(style: .default, reuseIdentifier: "cell")//tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         cell.textLabel?.text = item//sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
         cell.accessoryType = UITableViewCellAccessoryType.detailButton
         
