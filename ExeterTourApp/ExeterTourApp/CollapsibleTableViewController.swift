@@ -70,6 +70,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
@@ -112,7 +113,7 @@ extension CollapsibleTableViewController {
         
         let item:String = (searchController.isActive) ? searched_sections[indexPath.section].items[indexPath.row] : self.sections[indexPath.section].items[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell? ?? UITableViewCell(style: .default, reuseIdentifier: "cell")//tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         cell.textLabel?.text = item//sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
         cell.accessoryType = UITableViewCellAccessoryType.detailButton
         
