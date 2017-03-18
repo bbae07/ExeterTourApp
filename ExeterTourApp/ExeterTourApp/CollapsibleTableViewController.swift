@@ -63,7 +63,9 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
                     current_section.addItem(item: item)
                 }
             }
-            searched_sections.append(current_section)
+            if current_section.items.count > 0{
+                searched_sections.append(current_section)
+            }
         }
     }
     
@@ -101,7 +103,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
 extension CollapsibleTableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return (self.searchController.isActive) ? self.searched_sections.count : self.sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,6 +142,7 @@ extension CollapsibleTableViewController {
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         //hi
+        self.searchController.dismiss(animated: true, completion: nil)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "info")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
