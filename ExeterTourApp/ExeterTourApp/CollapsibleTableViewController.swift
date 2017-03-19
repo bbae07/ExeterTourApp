@@ -149,6 +149,12 @@ extension CollapsibleTableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let map:MapViewController = MapViewController()
+        map.selectedLocation = self.sections[indexPath.section].items[indexPath.row]
+        self.navigationController?.pushViewController(map, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
     }

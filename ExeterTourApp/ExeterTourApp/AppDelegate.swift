@@ -19,6 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         GMSServices.provideAPIKey("AIzaSyBJEdKCVE-S4iBvZ2BwBFN_QbmswENTDUU")
+        
+        if UserDefaults.standard.integer(forKey: "LANG") == 0{
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let lang:LanguageViewController = storyboard.instantiateViewController(withIdentifier: "LANG") as! LanguageViewController
+            self.window?.rootViewController = lang
+            self.window?.makeKeyAndVisible()
+        }
+        
 
         return true
     }

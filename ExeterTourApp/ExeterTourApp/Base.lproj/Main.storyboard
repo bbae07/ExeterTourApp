@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Language View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExeterTourApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LANG" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LanguageViewController" customModule="ExeterTourApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +21,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ff-tK-vbX">
+                                <rect key="frame" x="33" y="271" width="308" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LANG2"/>
+                                <connections>
+                                    <action selector="setLANG2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sZr-gj-zAe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbd-Mk-fDs">
+                                <rect key="frame" x="33" y="309" width="308" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LANG3"/>
+                                <connections>
+                                    <action selector="setLANG3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9q-5Y-KSQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vou-7Z-lWa">
+                                <rect key="frame" x="33" y="347" width="308" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LANG4"/>
+                                <connections>
+                                    <action selector="setLANG4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7NC-HD-gvL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-Re-nRd">
+                                <rect key="frame" x="33" y="233" width="308" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LANG1"/>
+                                <connections>
+                                    <action selector="setLang1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HgP-ak-Kfl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <attributedString key="userComments">
                             <fragment content="Language Selection Page">
@@ -34,12 +68,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="136"/>
+            <point key="canvasLocation" x="-266.39999999999998" y="135.38230884557723"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LgN-IL-jhn">
             <objects>
-                <viewController id="zmj-h8-xlh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MAIN" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zmj-h8-xlh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gbm-WT-wEx"/>
                         <viewControllerLayoutGuide type="bottom" id="qiC-tp-uJr"/>
