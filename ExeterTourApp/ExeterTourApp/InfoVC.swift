@@ -13,13 +13,39 @@ class InfoVC: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var text: UITextView!
     var currentlocation:loc? = nil
+    var image_index:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        text.text = currentlocation?.explain
+        self.text.text = currentlocation?.explain
+        self.image.image = UIImage(named:(self.currentlocation?.photo[self.image_index])!)
         // Do any additional setup after loading the view.
     }
+    @IBAction func showMap(_ sender: UIButton) {
+        let map:MapViewController = MapViewController()
+        map.selectedLocation = self.currentlocation
+        self.navigationController?.pushViewController(map, animated: true)
+    }
 
+    @IBAction func movePhoto(_ sender: UIButton){
+        
+        let tag:Int = sender.tag
+        
+        if tag == 0{
+            //left
+            if self.image_index != 0{
+                self.image_index -= 1
+                self.image.image = UIImage(named:(self.currentlocation?.photo[self.image_index])!)
+            }
+        }else{
+            //right
+            if self.image_index != ((self.currentlocation?.photo.count)! - 1){
+                self.image_index += 1
+                self.image.image = UIImage(named:(self.currentlocation?.photo[self.image_index])!)
+            }
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

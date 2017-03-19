@@ -86,7 +86,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
         // Initialize the sections array
         // Here we have three sections: Mac, iPad, iPhone
         sections = [
-            Section(name: "Academic Buildings", items: [loc(name: "Academy Building",latitude: 42.9811003,longitude: -70.9539292,photo: ["hi","hi"],explain: "explanation dummy"), loc(name: "Phelphs Science Center",latitude: 42.9801363,longitude: -70.9545467,photo: ["hi","hi"],explain: "explanation dummy")]),
+            Section(name: "Academic Buildings", items: [loc(name: "Academy Building",latitude: 42.9811003,longitude: -70.9539292,photo: ["hi","hi"],explain: "explanation dummy"), loc(name: "Phelphs Science Center",latitude: 42.9801363,longitude: -70.9545467,photo: ["hi","hi"],explain: "explanation dummy"), loc(name:"Dummy", latitude: 37.5269341,longitude: 127.0509413, photo: ["lion","goicon","dummy"], explain: "dummy explanation")]),
             Section(name: "Student Life", items: []),
             Section(name: "Athletics", items: []),
             Section(name: "Admissions and Administration", items: []),
