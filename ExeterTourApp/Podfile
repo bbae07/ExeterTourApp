@@ -7,6 +7,7 @@ target 'ExeterTourApp' do
   pod 'GoogleMaps'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'MapboxNavigation', '~> 0.3.0'
   # Pods for ExeterTourApp
 
   target 'ExeterTourAppTests' do
