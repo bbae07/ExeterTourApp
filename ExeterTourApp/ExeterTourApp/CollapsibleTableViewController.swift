@@ -126,7 +126,13 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
                 loc(name: "KIRTLAND HOUSE",latitude: 42.9794149,longitude: -70.9516325,photo: [],explain: "A girls' residence."),
                 loc(name: "MOULTON HOUSE",latitude: 42.9794149,longitude: -70.9516325,photo: [],explain: "A girls' house-style dorm."),
                 ]),
-            Section(name: "Parking", items: [])
+            Section(name: "Parking", items: [
+                loc(name: "Bissell House Parking",latitude:42.9749251 ,longitude: -70.9489563,photo: [],explain: "A visitor parking lot located behind the Admissions building."),
+                loc(name: "CHADWICK LANE PARKING",latitude: 42.9749251,longitude: -70.9489563,photo: [],explain: "Parking for athletic events near the facility garages; currently under construction."),
+                loc(name: "LAMONT PARKING",latitude: 42.9789775,longitude: -70.9524724,photo: [],explain: "Parking located behind the Lamont Health & Wellness Center."),
+                loc(name: "TAN LANE PARKING",latitude: 42.9789775,longitude: -70.9524724,photo: [],explain: "Parking between Jeremiah Smith Hall and Phelps Academy Center."),
+                loc(name: "WATER STREET PARKING",latitude: 42.9809859,longitude: -70.9528498,photo: [],explain: "Public parking located between the Harris Family Children's Center and the ITS Data Center.")
+                ])
         ]
     }
     
