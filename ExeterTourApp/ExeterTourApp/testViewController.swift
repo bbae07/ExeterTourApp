@@ -10,10 +10,33 @@ import UIKit
 import MapboxDirections
 import MapboxNavigation
 
-class testViewController: UIViewController {
+class testViewController: UIViewController,CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    var currentLocation:loc? = nil
+
+    
+    func setLocationManager(){
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = 1500.0
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let latestLocation: AnyObject = locations[locations.count - 1]
+        let currentLatitude = latestLocation.coordinate.latitude
+        let currentLongitude = latestLocation.coordinate.longitude
+        
+        self.currentLocation?.latitude = currentLatitude
+        self.currentLocation?.longitude = currentLongitude
+        self.route()
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setLocationManager()
         let mapView = MGLMapView(frame: view.bounds)
         
         view.addSubview(mapView)
@@ -57,9 +80,25 @@ class testViewController: UIViewController {
                 }
             }
         }*/
+        self.route()
         
-        let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 38.9131752, longitude: -77.0324047), name: "Mapbox")
-        let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 38.8977, longitude: -77.0365), name: "White House")
+    }
+    
+    func route(){
+        var lat:Double? = nil
+        var log:Double? = nil
+        
+        if let _ = self.currentLocation{
+            lat = (self.currentLocation?.latitude)!
+            log = (self.currentLocation?.longitude)!
+        }else{
+            lat = 37.496375
+            log = 126.9546903
+        }
+        
+        let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: lat!, longitude: log!), name: "Mapbox")
+        
+        let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 37.48121, longitude: 126.9505233), name: "White House")
         
         let options = RouteOptions(waypoints: [origin, destination], profileIdentifier: .automobileAvoidingTraffic)
         options.routeShapeResolution = .full
