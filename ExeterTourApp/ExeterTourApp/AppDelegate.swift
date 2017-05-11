@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GoogleMaps
+//import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,15 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        GMSServices.provideAPIKey("AIzaSyBJEdKCVE-S4iBvZ2BwBFN_QbmswENTDUU")
+        //GMSServices.provideAPIKey("AIzaSyBJEdKCVE-S4iBvZ2BwBFN_QbmswENTDUU")
         
-        if UserDefaults.standard.integer(forKey: "LANG") == 0{
+        if true {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let lang:LanguageViewController = storyboard.instantiateViewController(withIdentifier: "LANG") as! LanguageViewController
-            self.window?.rootViewController = lang
+            self.window?.rootViewController = testViewController()
             self.window?.makeKeyAndVisible()
         }
+        
         
 
         return true

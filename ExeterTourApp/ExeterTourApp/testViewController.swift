@@ -14,8 +14,63 @@ class testViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let mapView = MGLMapView(frame: view.bounds)
+        
+        view.addSubview(mapView)
+        /*
         // Do any additional setup after loading the view.
+        let directions = Directions.shared
+        
+        let waypoints = [
+            Waypoint(
+                coordinate: CLLocationCoordinate2D(latitude: 38.9099711, longitude: -77.0361122),
+                name: "Mapbox"),
+            Waypoint(
+                coordinate: CLLocationCoordinate2D(latitude: 38.8977, longitude: -77.0365),
+                name: "White House"),
+            ]
+        let options = RouteOptions(waypoints: waypoints, profileIdentifier: .cycling)
+        options.includesSteps = true
+        
+        let task = directions.calculate(options) { (waypoints, routes, error) in
+            guard error == nil else {
+                print("Error calculating directions: \(error!)")
+                return
+            }
+            
+            if let route = routes?.first, let leg = route.legs.first {
+                print("Route via \(leg):")
+                
+                let distanceFormatter = LengthFormatter()
+                let formattedDistance = distanceFormatter.string(fromMeters: route.distance)
+                
+                let travelTimeFormatter = DateComponentsFormatter()
+                travelTimeFormatter.unitsStyle = .short
+                let formattedTravelTime = travelTimeFormatter.string(from: route.expectedTravelTime)
+                
+                print("Distance: \(formattedDistance); ETA: \(formattedTravelTime!)")
+                
+                for step in leg.steps {
+                    print("\(step.instructions)")
+                    let formattedDistance = distanceFormatter.string(fromMeters: step.distance)
+                    print("— \(formattedDistance) —")
+                }
+            }
+        }*/
+        
+        let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 38.9131752, longitude: -77.0324047), name: "Mapbox")
+        let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 38.8977, longitude: -77.0365), name: "White House")
+        
+        let options = RouteOptions(waypoints: [origin, destination], profileIdentifier: .automobileAvoidingTraffic)
+        options.routeShapeResolution = .full
+        options.includesSteps = true
+        
+        Directions.shared.calculate(options) { (waypoints, routes, error) in
+            guard let route = routes?.first else { return }
+            
+            let viewController = NavigationViewController(for: route)
+            self.present(viewController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

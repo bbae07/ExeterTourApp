@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MapboxCoreNavigation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -69,11 +64,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -97,12 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65A97218F5297D9F24B22D7033CA9D1D</key>
+		<key>60B8F9FB9201BA9B44DE2F6125738234</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>65A97218F5297D9F24B22D7033CA9D1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -118,16 +108,6 @@
 			<true/>
 		</dict>
 		<key>9FEB2A9BBBC6CFAFC600401E869EE0FD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AE0C0481A18FA68ADAC736F8B601A346</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B263226A24747BCC7D3A1F26D0E243A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
