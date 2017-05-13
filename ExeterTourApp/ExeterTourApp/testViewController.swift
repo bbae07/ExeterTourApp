@@ -21,7 +21,7 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
     
     func setLocationManager(){
         locationManager.requestWhenInUseAuthorization()
-        locationManager.distanceFilter = 1500.0
+        locationManager.distanceFilter = 3000.0
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
@@ -84,7 +84,7 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
          }
          }
 	        }*/
-        self.route()
+        //self.route()
         
     }
     
@@ -96,9 +96,11 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
             lat = (self.currentLocation?.latitude)!
             log = (self.currentLocation?.longitude)!
         }else{
-            lat = selectedLocation?.latitude
-            log = selectedLocation?.longitude
+            //lat = selectedLocation?.latitude
+            //log = selectedLocation?.longitude
         }
+        //lat = 42.9811003
+        //log = -70.9539292
         
         let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: lat!, longitude: log!), name: "Mapbox")
         
@@ -108,11 +110,17 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
         options.routeShapeResolution = .full
         options.includesSteps = true
         
-        Directions.shared.calculate(options) { (waypoints, routes, error) in
-            guard let route = routes?.first else { return }
+    Directions.shared.calculate(options) {
+        (waypoints, routes, error) in
+        
+        guard let route = routes?.first else {
             
-            let viewController = NavigationViewController(for: route)
-            self.present(viewController, animated: true, completion: nil)
+            return
+            
+        }
+            
+        let viewController = NavigationViewController(for: route)
+        self.present(viewController, animated: true, completion: nil)
         }
     }
     
