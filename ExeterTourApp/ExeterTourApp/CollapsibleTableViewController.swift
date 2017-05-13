@@ -35,7 +35,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
     var searched_sections = [Section]()
     
     var searchController = UISearchController(searchResultsController: nil)
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchController.searchBar.text = ""
         searchController.searchBar.showsCancelButton = false
@@ -69,7 +69,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
         }
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -101,7 +101,7 @@ class CollapsibleTableViewController: UITableViewController, UISearchBarDelegate
 // MARK: - View Controller DataSource and Delegate
 //
 extension CollapsibleTableViewController {
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return (self.searchController.isActive) ? self.searched_sections.count : self.sections.count
     }
@@ -150,7 +150,7 @@ extension CollapsibleTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let map:MapViewController = MapViewController()
+        let map:testViewController = testViewController()
         map.selectedLocation = self.sections[indexPath.section].items[indexPath.row]
         self.navigationController?.pushViewController(map, animated: true)
     }
@@ -162,7 +162,7 @@ extension CollapsibleTableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 1.0
     }
-
+    
 }
 
 //
