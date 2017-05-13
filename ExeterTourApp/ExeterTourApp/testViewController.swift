@@ -99,8 +99,8 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
     
     func route(){
         if !found_route{
-            //let lat:Double = (self.currentLocation?.latitude)!
-            //let log:Double = (self.currentLocation?.longitude)!
+            let lat:Double = 42.9811003//(self.currentLocation?.latitude)!
+            let log:Double = -70.9539292//(self.currentLocation?.longitude)!
             
             /*
              if let _ = self.currentLocation{
@@ -112,7 +112,7 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
              }
              */
             
-            let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: (self.currentLocation?.latitude)!, longitude: (self.currentLocation?.longitude)!), name: "Mapbox")
+            let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: log), name: "Mapbox")
             
             let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: (selectedLocation?.latitude)!, longitude: (selectedLocation?.longitude)!), name: selectedLocation?.name)
             

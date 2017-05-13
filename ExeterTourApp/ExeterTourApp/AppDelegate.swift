@@ -20,12 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //GMSServices.provideAPIKey("AIzaSyBJEdKCVE-S4iBvZ2BwBFN_QbmswENTDUU")
         
-        if true {
-            //            self.window = UIWindow(frame: UIScreen.main.bounds)
-            //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //            let lang:LanguageViewController = storyboard.instantiateViewController(withIdentifier: "LANG") as! LanguageViewController
-            //            self.window?.makeKeyAndVisible()
+
+        /* : 1차 배포에서는 언어 관련 처리 하지 않기로 함.
+        if UserDefaults.standard.integer(forKey: "LANG") == 0{
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let lang:LanguageViewController = storyboard.instantiateViewController(withIdentifier: "LANG") as! LanguageViewController
+            self.window?.rootViewController = lang
+            self.window?.makeKeyAndVisible()
         }
+        */
         
         
         
