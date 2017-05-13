@@ -17,7 +17,7 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
     var currentLocation:loc? = nil
     var selectedLocation:loc? = nil
     
-    
+    var found_route = false
     
     func setLocationManager(){
         locationManager.requestWhenInUseAuthorization()
@@ -30,9 +30,18 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
         let latestLocation: AnyObject = locations[locations.count - 1]
         let currentLatitude = latestLocation.coordinate.latitude
         let currentLongitude = latestLocation.coordinate.longitude
-        
-        self.currentLocation?.latitude = currentLatitude
-        self.currentLocation?.longitude = currentLongitude
+        /*
+         init(name:String, latitude:Double, longitude:Double, photo:[String], explain:String ){
+         self.name = name
+         self.latitude = latitude
+         self.longitude = longitude
+         self.photo = photo
+         self.explain = explain
+         }
+         loc(name:"CURRENT", latitude: currentLatitude,longitude: currentLongitude , photo: [], explain: "CURRENT_EXPLAIN")
+         */
+        self.currentLocation = loc(name:"YOU",latitude:currentLatitude,longitude:currentLongitude,photo:[],explain:"You're here")//?.latitude = currentLatitude
+        //self.currentLocation?.longitude = currentLongitude
         self.route()
         
     }
@@ -89,38 +98,42 @@ class testViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     func route(){
-        var lat:Double? = (self.currentLocation?.latitude)!
-        var log:Double? = (self.currentLocation?.longitude)!
-        
-        /*
-        if let _ = self.currentLocation{
-            lat = (self.currentLocation?.latitude)!
-            log = (self.currentLocation?.longitude)!
-        }else{
-            //lat = selectedLocation?.latitude
-            //log = selectedLocation?.longitude
-        }
-        */
-        
-        let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: lat!, longitude: log!), name: "Mapbox")
-        
-        let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: (selectedLocation?.latitude)!, longitude: (selectedLocation?.longitude)!), name: selectedLocation?.name)
-        
-        let options = RouteOptions(waypoints: [origin, destination], profileIdentifier: .walking)
-        options.routeShapeResolution = .full
-        options.includesSteps = true
-        
-    Directions.shared.calculate(options) {
-        (waypoints, routes, error) in
-        
-        guard let route = routes?.first else {
+        if !found_route{
+            //let lat:Double = (self.currentLocation?.latitude)!
+            //let log:Double = (self.currentLocation?.longitude)!
             
-            return
+            /*
+             if let _ = self.currentLocation{
+             lat = (self.currentLocation?.latitude)!
+             log = (self.currentLocation?.longitude)!
+             }else{
+             //lat = selectedLocation?.latitude
+             //log = selectedLocation?.longitude
+             }
+             */
             
-        }
+            let origin = Waypoint(coordinate: CLLocationCoordinate2D(latitude: (self.currentLocation?.latitude)!, longitude: (self.currentLocation?.longitude)!), name: "Mapbox")
             
-        let viewController = NavigationViewController(for: route)
-        self.present(viewController, animated: true, completion: nil)
+            let destination = Waypoint(coordinate: CLLocationCoordinate2D(latitude: (selectedLocation?.latitude)!, longitude: (selectedLocation?.longitude)!), name: selectedLocation?.name)
+            
+            let options = RouteOptions(waypoints: [origin, destination], profileIdentifier: .walking)
+            options.routeShapeResolution = .full
+            options.includesSteps = true
+            
+            Directions.shared.calculate(options) {
+                (waypoints, routes, error) in
+                
+                guard let route = routes?.first else {
+                    
+                    return
+                    
+                }
+                
+                let viewController = NavigationViewController(for: route)
+                self.present(viewController, animated: true, completion: nil)
+                self.found_route = true
+            }
+
         }
     }
     
