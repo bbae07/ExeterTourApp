@@ -4,7 +4,32 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>AWSCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSPolly.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MapboxCoreNavigation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MapboxDirections.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MapboxNavigation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OSRMTextInstructions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,7 +49,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>Polyline.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pulley.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,12 +72,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4452C810821EEA8BEB1FE045523050A6</key>
+		<key>223B08D5742574DEF926A38755FB361D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>225112617160C1A7F1C2AE6EC5333EBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B07E97554DC4D8FD6FBFCBD5ABFAB3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>60B8F9FB9201BA9B44DE2F6125738234</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65A97218F5297D9F24B22D7033CA9D1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8AE844C9B8AF98C36F2274CEA68831CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +107,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A3E6DA3407695CB30F57925A14B35E89</key>
+		<key>9FEB2A9BBBC6CFAFC600401E869EE0FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA89C0A53859A8EACC539CA9CB886D57</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB3FD0D4E94E7B5918D8DF42867F227C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD1DBCC1DF68514CF23AA06E1AB43A68</key>
 		<dict>
 			<key>primary</key>
 			<true/>

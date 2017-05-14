@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0148F9AEFABFF8267EDBFD59 /* Pods_ExeterTourAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55E5407DA309FECC5120ED0 /* Pods_ExeterTourAppTests.framework */; };
+		8B3FBE821EC3F3EF006967B4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3FBE811EC3F3EF006967B4 /* testViewController.swift */; };
 		8B8BB2C71E7EDB300010F29C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8BB2C61E7EDB300010F29C /* MapViewController.swift */; };
 		8B8BB2C91E7EEFFD0010F29C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8BB2C81E7EEFFD0010F29C /* LanguageViewController.swift */; };
 		EA1AB04F00B858F2EF28F30C /* Pods_ExeterTourApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF4F89ADDE3E638F4D11E46 /* Pods_ExeterTourApp.framework */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		04612E4CD4D4EAA7D657C629 /* Pods-ExeterTourAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExeterTourAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExeterTourAppUITests/Pods-ExeterTourAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8B3FBE811EC3F3EF006967B4 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		8B8BB2C61E7EDB300010F29C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B8BB2C81E7EEFFD0010F29C /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		8FAB1BC752FE32F9B0411F29 /* Pods-ExeterTourAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExeterTourAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExeterTourAppTests/Pods-ExeterTourAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				F18050541E7D056300F22EE7 /* Assets.xcassets */,
 				F18050561E7D056300F22EE7 /* LaunchScreen.storyboard */,
 				F18050591E7D056300F22EE7 /* Info.plist */,
+				8B3FBE811EC3F3EF006967B4 /* testViewController.swift */,
 			);
 			path = ExeterTourApp;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				F1CCCB101E7D17BB00BEBB60 /* InfoVC.swift in Sources */,
 				F180504E1E7D056300F22EE7 /* AppDelegate.swift in Sources */,
 				F1CCCB121E7D292600BEBB60 /* loc.swift in Sources */,
+				8B3FBE821EC3F3EF006967B4 /* testViewController.swift in Sources */,
 				8B8BB2C71E7EDB300010F29C /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,20 +7,23 @@
 //
 
 import UIKit
-import GoogleMaps
-import Alamofire
-import SwiftyJSON
+//import GoogleMaps
+//import Alamofire
+//import SwiftyJSON
 
-class MapViewController: UIViewController,CLLocationManagerDelegate {
+class MapViewController: UIViewController{//,CLLocationManagerDelegate {
     
     var selectedLocation:loc? = nil
+    
     var currentLocation:loc? = nil
+    /*
     var locationManager: CLLocationManager = CLLocationManager()
     var mapView:GMSMapView? = nil
     
     var current_route_count = 0
     var current_route_path:GMSPath? = nil
     var current_route_polylines:[GMSPolyline] = []
+    */
     var current_tolerance = 30
     
     var distance_label:UILabel? = nil
@@ -30,8 +33,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.setLocationManager()
-
+        //self.setLocationManager()
+        /*
         distance_label = UILabel(frame:CGRect(x:0,y:self.mapView!.frame.size.height - 100,width:self.mapView!.frame.size.width,height:50.0))
         duration_label = UILabel(frame:CGRect(x:0,y:self.mapView!.frame.size.height - 50,width:self.mapView!.frame.size.width,height:50.0))
         distance_label?.textColor = UIColor.black
@@ -41,7 +44,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
         self.view.addSubview(distance_label!)
         self.view.addSubview(duration_label!)
         self.view.backgroundColor = UIColor.white
+        */
     }
+    /*
     
     func setLocationManager(){
         locationManager.requestWhenInUseAuthorization()
@@ -212,7 +217,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
         rectangle.strokeWidth = 2.0
         rectangle.map = mapView
     }
-    
+    */
     /*
     func locationSelector(){
         print("selector clicked")
