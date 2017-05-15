@@ -634,7 +634,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDF08ED2025C0F9D069E3B5A /* Pods-ExeterTourApp.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = white_small;
 				DEVELOPMENT_TEAM = L6C8TCRC5L;
 				INFOPLIST_FILE = ExeterTourApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -649,7 +649,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7838B71F6BD512F217DB1E7 /* Pods-ExeterTourApp.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = white_small;
 				DEVELOPMENT_TEAM = L6C8TCRC5L;
 				INFOPLIST_FILE = ExeterTourApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
